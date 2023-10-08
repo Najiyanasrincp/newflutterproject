@@ -15,14 +15,14 @@ void main() {
 }
 
 class Listbuilderass extends StatelessWidget{
-  var name=['alexander','Najiya','Shamly','alexander','Najiya','Shamly','alexander','Najiya','Shamly','alexander','Najiya','Shamly',];
-  var values=[112,123,134,145,154,164,175,185,192,203,214,228];
+  var name=['Facebook','A10 NETWORK INC','Intel corp','Hp Inc','Advanced Micro Devices Inc','Apple Inc','Amazon.com Inc','Microsoft Corporation','Samsung','alexander','Najiya','Shamly',];
+  var values=[112,1213,134,145,154,64,175,1875,192,203,214,228];
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text('Contacts',
-        //style: TextStyle(color: Colors.white),
-        style: GoogleFonts.merriweather(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),
+      appBar: AppBar(title: Text('List View Builder',
+        //style: TextStyle(color: Colors.black),
+       style: GoogleFonts.merriweather(color: Colors.black,fontSize: 18.5,fontWeight: FontWeight.bold),
       ),
         backgroundColor: Colors.cyanAccent[700],),
       body: ListView.builder(
@@ -30,17 +30,16 @@ class Listbuilderass extends StatelessWidget{
         String firstLetter = name[index][0].toUpperCase();
         return  Container(
           width: double.infinity, // Set the width to occupy the full width
-          height: 70, // Set the height to your desired value
+          height: 80, // Set the height to your desired value
           child: Card(
-            color: Colors.cyan[50],
+            //color: Colors.cyan[50],
+            elevation: 4,
+            shadowColor: Colors.cyanAccent[100],
             child: Align(
               alignment: Alignment.center,
               child: ListTile(
-                // contentPadding: EdgeInsets.symmetric(horizontal: 2, vertical: 8), // Adjust padding as needed
-                leading: CircleAvatar(
-                  //contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8), // Adjust padding as needed
-                  //radius: 40,
-                  backgroundColor: Colors.cyanAccent[700],
+                leading:
+                CircleAvatar(backgroundColor: Colors.cyanAccent[700],radius: 25,
                   child: Text(
                     firstLetter,
                     style: TextStyle(
@@ -49,9 +48,17 @@ class Listbuilderass extends StatelessWidget{
                     ),
                   ),
                 ),
-                title:Text(name[index],style: GoogleFonts.merriweather(color: Colors.black,fontWeight: FontWeight.bold),),
+                title:Text(name[index],
+                  style: TextStyle(color: Colors.black,
+                      //fontWeight: FontWeight.bold
+                  ),
+                  // style: GoogleFonts.merriweather(
+                  //     color: Colors.black,
+                  //     fontWeight: FontWeight.bold),
+                  ),
                 trailing: Text(
-                  '\$${values[index]}', // Add the dollar sign and the value from the values list
+                  '\$${values[index]}', // Add the dollar si
+                  // gn and the value from the values list
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
