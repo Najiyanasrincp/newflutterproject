@@ -11,10 +11,9 @@ void main(){
 }
 
 class Gridvieww extends StatelessWidget {
-  var name = ["Anaz", "Rashad", "Rahul", "Safuwan","manu","saalu","silu"];
-  var image = ["assets/facebook.png",
-    "assets/facebook.png","assets/facebook.png","assets/facebook.png","assets/facebook.png","assets/facebook.png","assets/facebook.png"
-  ];
+  var name = ["shamly", "najiya", "shifna", "raifa","nela","wafa","silu"];
+  var image = ["assets/images (1).jpg","assets/images (1).jpg","assets/images (1).jpg",
+               "assets/images (1).jpg","assets/images (1).jpg","assets/images (1).jpg","assets/images (1).jpg"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
