@@ -20,11 +20,11 @@ class Listbuilderass extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text('List View Builder',
-        //style: TextStyle(color: Colors.black),
-       style: GoogleFonts.merriweather(color: Colors.black,fontSize: 18.5,fontWeight: FontWeight.bold),
-      ),
-        backgroundColor: Colors.cyanAccent[700],),
+      // appBar: AppBar(title: Text('List View Builder',
+      //   //style: TextStyle(color: Colors.black),
+      //  style: GoogleFonts.merriweather(color: Colors.black,fontSize: 18.5,fontWeight: FontWeight.bold),
+      // ),
+      //   backgroundColor: Colors.cyanAccent[700],),
       body: ListView.builder(
         itemCount:name.length,itemBuilder: (context,index){
         String firstLetter = name[index][0].toUpperCase();
@@ -34,12 +34,12 @@ class Listbuilderass extends StatelessWidget{
           child: Card(
             //color: Colors.cyan[50],
             elevation: 4,
-            shadowColor: Colors.cyanAccent[100],
+            shadowColor: Colors.teal[100],
             child: Align(
               alignment: Alignment.center,
               child: ListTile(
                 leading:
-                CircleAvatar(backgroundColor: Colors.cyanAccent[700],radius: 25,
+                CircleAvatar(backgroundColor: Colors.teal[800],radius: 25,
                   child: Text(
                     firstLetter,
                     style: TextStyle(
@@ -49,7 +49,7 @@ class Listbuilderass extends StatelessWidget{
                   ),
                 ),
                 title:Text(name[index],
-                  style: TextStyle(color: Colors.black,
+                  style: TextStyle(color: Colors.teal[800],
                       //fontWeight: FontWeight.bold
                   ),
                   // style: GoogleFonts.merriweather(
@@ -60,7 +60,7 @@ class Listbuilderass extends StatelessWidget{
                   '\$${values[index]}', // Add the dollar si
                   // gn and the value from the values list
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.teal[800],
                     fontWeight: FontWeight.bold,
                   ),
                 ),

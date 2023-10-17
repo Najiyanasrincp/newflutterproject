@@ -32,20 +32,20 @@ class Listbuilder extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text('Contacts',
-        //style: TextStyle(color: Colors.white),
-        style: GoogleFonts.merriweather(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),
-      ),
-        backgroundColor: Colors.pink[800],),
+      // appBar: AppBar(title: Text('Contacts',
+      //   //style: TextStyle(color: Colors.white),
+      //   style: GoogleFonts.merriweather(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),
+      // ),
+      //   backgroundColor: Colors.teal[800],),
       body: ListView.builder(
         itemCount:name.length,itemBuilder: (context,index){
         return  Card(
-          color: Colors.pink[50],
+          color: Colors.teal[50],
           child: ListTile(
             leading:CircleAvatar(backgroundImage: NetworkImage(image[index]),),
-            title:Text(name[index],style: GoogleFonts.merriweather(color: Colors.pink[800],fontWeight: FontWeight.bold),),
+            title:Text(name[index],style: GoogleFonts.merriweather(color: Colors.teal[800],fontWeight: FontWeight.bold),),
             subtitle: Text(phone[index]),
-            trailing: Icon(Icons.call,color: Colors.pink[800],),
+            trailing: Icon(Icons.camera_alt_outlined,color: Colors.teal[800],),
           ),
         );
       },

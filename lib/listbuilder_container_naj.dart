@@ -9,12 +9,12 @@ void main() {
         MaterialApp(
           useInheritedMediaQuery: true,
           debugShowCheckedModeBanner: false,
-          home: Listbuilderass(),
+          home: Listbuilderassmntnaj(),
         ),
   ));
 }
 
-class Listbuilderass extends StatelessWidget{
+class Listbuilderassmntnaj extends StatelessWidget{
   var name=['alexander','Najiya','Shamly','alexander','Najiya','Shamly','alexander','Najiya','Shamly','alexander','Najiya','Shamly',];
   var values=[112,123,134,145,154,164,175,185,192,203,214,228];
   @override

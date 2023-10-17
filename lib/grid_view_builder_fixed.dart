@@ -58,17 +58,17 @@ class Gridview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Grid View',
-          style: GoogleFonts.merriweather(
-            color: Colors.white,
-            fontSize: 18.5,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.blue[600],
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Grid View',
+      //     style: GoogleFonts.merriweather(
+      //       color: Colors.white,
+      //       fontSize: 18.5,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.blue[600],
+      // ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,//crossaxispcing:30,
@@ -79,8 +79,8 @@ class Gridview extends StatelessWidget {
             padding: const EdgeInsets.all(4.0),
             child: Card(
               elevation: 6,
-              shadowColor: Colors.blue,
-              color: Colors.red[100],
+              shadowColor: Colors.teal,
+              color: Colors.white,
               child: Container(
                 height: 250, // Adjust the height as needed
                 child: Column(
@@ -92,7 +92,7 @@ class Gridview extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      color: Colors.green[800],
+                      color: Colors.teal[800],
                       //padding: EdgeInsets.all(8.0),
                       child: Container(
                         height: 35,
