@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'lunch_tapbottom.dart';
 
 
 void main() {
@@ -9,23 +10,23 @@ void main() {
         MaterialApp(
           useInheritedMediaQuery: true,
           debugShowCheckedModeBanner: false,
-          home: tapbarassmnt(),
+          home: lunchcart(),
         ),
   ));
 }
 
-class tapbarassmnt extends StatefulWidget{
+class lunchcart extends StatefulWidget{
   @override
-  State<tapbarassmnt> createState() => _tapbarassmntState();
+  State<lunchcart> createState() => _lunchcartState();
 }
 
-class _tapbarassmntState extends State<tapbarassmnt> {
+class _lunchcartState extends State<lunchcart> {
   @override
   Widget build(BuildContext context){
     return DefaultTabController(
-      length: 7,
+      length: 2,
       child: Scaffold(
-        appBar: AppBar(title: Text("GeeksForGeeks"),
+        appBar: AppBar(
           backgroundColor: Colors.teal[700],
           actions: [
             // Padding(
@@ -34,7 +35,7 @@ class _tapbarassmntState extends State<tapbarassmnt> {
             // ),
             Padding(
               padding: const EdgeInsets.only(right: 0),
-              child: Icon(Icons.camera_alt_sharp),
+              child: Icon(Icons.camera),
             ),
             PopupMenuButton(itemBuilder: (context){
               return [
@@ -51,38 +52,20 @@ class _tapbarassmntState extends State<tapbarassmnt> {
             ),
           ],
           bottom: TabBar(
-            isScrollable: true,
+           // isScrollable: true,
             labelColor:Colors.white,
-              // unselectedLabelColor: Colors.white,
-              tabs: [
-                Tab(icon: Icon(Icons.home_filled),child: Text("Home"),),
-                Tab(icon: Icon(Icons.account_box_outlined),child: Text("Account"),),
-                Tab(icon: Icon(Icons.alarm),child: Text("Alarm"),),
-                Tab(icon: Icon(Icons.camera_alt_outlined),child: Text("Camera"),),
-                Tab(icon: Icon(Icons.call),child: Text("Call"),),
-                Tab(icon: Icon(Icons.message_outlined),child: Text("Chats"),),
-                Tab(icon: Icon(Icons.my_library_music_sharp),child: Text("Music"),)
-
-          ],),
+            // unselectedLabelColor: Colors.white,
+            tabs: [
+              Tab(child: Text("Lunch",style:TextStyle(fontSize: 16)),),
+              Tab(child: Text("Cart",style:TextStyle(fontSize: 16)),),
+            ],),
         ),
         body: TabBarView(
           children: [
-            // Icon for the Account tab
-            Center(
-              child: Stack(
-                children: [
-                  //Icon(Icons.account_box_outlined, size: 50.0, color: Colors.teal[700]),
-                  Positioned(
-                    right: 0,
-                    left: 0,
-                    bottom: 330,
-                    child: Icon(Icons.home_filled,size: 50,color: Colors.teal,),
-                  ),
-                ],
-              ),
-            ),
-
-            // Repeat the above pattern for other tabs...
+            Lunch(),
+            Container(
+              child: Text(""),
+            )
           ],
         ),
 
