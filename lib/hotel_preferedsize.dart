@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:icon_decoration/icon_decoration.dart';
 
 void main() {
   runApp(DevicePreview(
@@ -12,15 +13,20 @@ void main() {
 }
 
 class MyHomePage extends StatelessWidget {
-  var name=['alexander','Najiya','Shamly','alexander','Najiya','Shamly','alexander','Najiya','Shamly','alexander'];
-
+var image=[
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXH4-rZ3LQsvxZwMvlbfHXfS4HyZt8Vd0GNA&usqp=CAU",
+   "https://t3.ftcdn.net/jpg/02/71/08/28/360_F_271082810_CtbTjpnOU3vx43ngAKqpCPUBx25udBrg.jpg",
+  "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww",
+];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
+            floating: false,
+            pinned: true,
+            expandedHeight: 160,
             backgroundColor: Colors.cyan,
             leading: Icon(Icons.menu),
             actions: [
@@ -42,7 +48,7 @@ class MyHomePage extends StatelessWidget {
                         "Type your Location",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 26,
+                          fontSize: 23,
                         ),
                       ),
                     ),
@@ -171,35 +177,88 @@ class MyHomePage extends StatelessWidget {
                       ),
                       ListView.builder(
                         shrinkWrap: true, // Ensure it only takes the space it needs
-                        itemCount: 1, // Replace with the actual number of items
+                        itemCount: 3, // Replace with the actual number of items
                           itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              height: 200,
-                              width: 200,
-                              color: Colors.yellow,
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    top: 20, // Position at the top
-                                    right: 20, // Position at the right
-                                    child: Icon(
-                                      Icons.star,
-                                      size: 40, // Adjust the size of the star icon
-                                      color: Colors.black, // Fill color of the star
-                                      // You can customize the border using a Container as well
+                            return Column(
+                              children: [
+                                Container(
+                                  height: 200,
+                                  width: 380,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(image[index]),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
-                                  Positioned(
-                                    bottom: 20, // Position at the bottom
-                                    right: 20, // Position at the right
-                                    child: Container(
-                                      width: 55, // Width of the inner box
-                                      height: 40, // Height of the inner box
-                                      color: Colors.white,
-                                    ),
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        top: 20, // Position at the top
+                                        right: 20, // Position at the right
+                                        child: DecoratedIcon(
+                                          icon: Icon(Icons.star, color: Colors.black),
+                                          decoration: IconDecoration(border: IconBorder(
+                                            color: Colors.white
+                                          )),
+                                        )
+                                      ),
+                                      Positioned(
+                                        bottom: 20, // Position at the bottom
+                                        right: 20, // Position at the right
+                                        child: Container(
+                                          width: 55, // Width of the inner box
+                                          height: 40, // Height of the inner box
+                                          color: Colors.white,
+                                          child: Center(
+                                            child: Text(
+                                              "\$40",
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 8.0,bottom: 7),
+                                        child: Text("Awesome room near kakkanad",style: TextStyle(fontSize: 19),),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(bottom: 8.0),
+                                        child: Text("kakkanad,kochi"),
+                                      ),
+                                      Row(
+                                        children: [
+                                        for (int i = 0; i < 5; i++)
+                                          Icon(
+                                            Icons.star,
+                                            size: 20,
+                                            color: Colors.green,
+                                          ),
+                                        Text(
+                                          "(220 reviews)",
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                      ),
+                                      SizedBox(height: 20,)
+                                    ],
+                                  ),
+                                )
+                              ],
                             );
 
                           },

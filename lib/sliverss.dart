@@ -25,7 +25,7 @@ class sliverss extends StatelessWidget{
             floating: true,
             pinned: true,
             expandedHeight: 200,
-            // flexibleSpace: Container(color: Colors.yellow,),
+            //flexibleSpace: Container(color: Colors.yellow,),
             backgroundColor: Colors.pinkAccent,
             title: Text("Slivers Example"),
             actions: [
